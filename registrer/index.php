@@ -3,9 +3,6 @@ include '../php/html/head.php';
 include '../php/functions/userfunctions.php';
 
 
-error_reporting(-1);
-ini_set('display_errors', 'On');
-
 if(isLoggedIn()){
 	header('Location: http://fotballguiden.nu');
 	die();
@@ -15,13 +12,15 @@ if(isLoggedIn()){
 ?>
 
 <br><br><br><br><div class="container">
-<h1>Logg inn</h1>
+<h1>Registrer</h1>
 
-<form action="../php/post/loginpost.php" method="POST">
+<form action="../php/post/registerpost.php" method="POST">
 	<div class="input-group input-group-lg">
+	<input type="text" placeholder="Navn" class="form-control" name="name"/>	
 	<input type="email" placeholder="Epost" class="form-control" name="email"/>
 	<input type="password" class="form-control" placeholder="Passord" name="password"/>
-	<?php printLoginMsg();?>
+	<input type="password" placeholder="Gjenta passord" class="form-control" name="repeatPassword"/>
+	<?php printRegisterMsg();?>
 	<br><input type="submit" name="submit" value="OK" class="btn btn-default"/>
-</div></div>
+</div></div> 
 </form>

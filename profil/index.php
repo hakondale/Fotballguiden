@@ -12,6 +12,8 @@ if(!isLoggedIn()){
 	//die();
 }
 
+echo $_SESSION['logged_in_user'];
+
 
 echo '<br><br><h1>' . getLoggedInUser()->getName() . '</h1>';
 
