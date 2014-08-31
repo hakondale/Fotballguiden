@@ -19,6 +19,7 @@ $user->constructWithEmail($email);
 if($user->isUserExcisting()){
 	if($user->isCorrectPassword($password)){
 		$user->login();
+		echo $_SESSION['logged_in_user'];
 	}
 	else{
 		writeLoginMsg("Du har skrevet feil passord!");

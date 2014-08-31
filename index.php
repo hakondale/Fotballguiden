@@ -16,5 +16,4 @@ echo "<br> <br> <br> bitches aint shit but hoes and tricks";
 
 
 
-
 ?>
