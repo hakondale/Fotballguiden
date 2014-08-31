@@ -1,9 +1,13 @@
 <?php
 session_start();
 
-error_reporting(-1);
-ini_set('display_errors', 'On');
+$testing = false;
 
+if($testing){
+  session_start(); 
+  error_reporting(-1);
+  ini_set('display_errors', 'On');
+}
 $email = $_POST['email'];
 $password = $_POST['password'];
 
@@ -19,7 +23,6 @@ $user->constructWithEmail($email);
 if($user->isUserExcisting()){
 	if($user->isCorrectPassword($password)){
 		$user->login();
-		echo $_SESSION['logged_in_user'];
 	}
 	else{
 		writeLoginMsg("Du har skrevet feil passord!");
@@ -31,6 +34,6 @@ else{
 
 
 
-header('Location: ' . $_SERVER['HTTP_REFERER']);
+header('Location: ' . $_SERVER['HTTP_REFERER'] . '?referer=login');
 
 ?>

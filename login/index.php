@@ -1,10 +1,5 @@
 <?php
 include '../php/html/head.php';
-include '../php/functions/userfunctions.php';
-
-
-error_reporting(-1);
-ini_set('display_errors', 'On');
 
 if(isLoggedIn()){
 	header('Location: http://fotballguiden.nu');
