@@ -64,6 +64,22 @@ class User{
 	public function getRole(){
 		return $this->role;
 	}
+
+	public function setName($name){
+		$this->name = $name;
+	}
+
+	public function setEmail($email){
+		$this->email = $email;
+	}
+
+	public function setPassword($password){
+		$this->password = crypt($password);
+	}
+
+	public function saveInDB(){
+		mysql_query("INSERT INTO users VALUES('','$this->name', '$this->email', '$this->date_created', '$this->password', '$this->role')");
+	}
 }
 
 
