@@ -2,7 +2,7 @@
 include '../php/html/head.php';
 
 if(isLoggedIn()){
-	header('Location: http://fotballguiden.nu');
+	header('Location: http://beta.fotballguiden.nu');
 	die();
 }
 
