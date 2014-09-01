@@ -1,7 +1,7 @@
 <?php
 include "beta/php/html/head.php";
 
-echo "<br> <br> <br> bitches aint shit but hoes and tricks";
+echo "<br> <br> <br> bitcgfhjghjghjks and tricks";
 
 
 
