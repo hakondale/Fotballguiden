@@ -1,5 +1,5 @@
 <?php
-include "beta/php/html/head.php";
+include "/php/html/head.php";
 
 echo "<br> <br> <br> bitcgfhjghjghjks and tricks";
 

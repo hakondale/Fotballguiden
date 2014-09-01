@@ -27,7 +27,7 @@ include $_SERVER['DOCUMENT_ROOT'] . "/beta/php/functions/userfunctions.php";
         <body>
         	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
   				<div class="container">
-      <a class="navbar-brand" href="http://beta.fotballguiden.nu">Fotballguiden</a>
+      <a class="navbar-brand" href="http://fotballguiden.nu/beta">Fotballguiden</a>
       <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
       <span class = "icon-bar"></span>
       <span class = "icon-bar"></span>
