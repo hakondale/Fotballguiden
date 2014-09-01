@@ -4,7 +4,6 @@ session_start();
 $testing = false;
 
 if($testing){
-  session_start(); 
   error_reporting(-1);
   ini_set('display_errors', 'On');
 }
@@ -15,7 +14,7 @@ include '../functions/dbfunctions.php';
 include '../functions/userfunctions.php';
 include '../entities/User.php';
 
-
+$referer = "";
 
 $user = new User();
 $user->constructWithEmail($email);
@@ -23,6 +22,7 @@ $user->constructWithEmail($email);
 if($user->isUserExcisting()){
 	if($user->isCorrectPassword($password)){
 		$user->login();
+		$referer = "login";
 	}
 	else{
 		writeLoginMsg("Du har skrevet feil passord!");
@@ -33,7 +33,7 @@ else{
 }
 
 
-
-header('Location: ' . $_SERVER['HTTP_REFERER'] . '?referer=login');
-
+if(!$testing){
+	header('Location: ' . $_SERVER['HTTP_REFERER'] . '?referer=' . $referer);
+}
 ?>
