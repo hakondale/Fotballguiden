@@ -1,7 +1,7 @@
 <?php
-include "/php/html/head.php";
+include "php/html/head.php";
 
-echo "<br> <br> <br> bitcgfhjghjghjks and tricks";
+echo "<br> <br> <br> beta";
 
 
 
