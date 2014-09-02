@@ -10,9 +10,10 @@ if($testing){
 $email = $_POST['email'];
 $password = $_POST['password'];
 
-include '../functions/dbfunctions.php';
-include '../functions/userfunctions.php';
-include '../entities/User.php';
+include $_SERVER['DOCUMENT_ROOT'] . "/php/web/document_root.php";
+include $DOCUMENT_ROOT . '/php/functions/dbfunctions.php';
+include $DOCUMENT_ROOT . '/php/functions/userfunctions.php';
+include $DOCUMENT_ROOT . '/php/entities/User.php';
 
 $referer = "";
 
