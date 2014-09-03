@@ -36,7 +36,7 @@ function getLoggedInUser(){
 }
 
 function printLogOutToast(){
-	if($_GET['referer']){
+	if(isset($_GET['referer'])){
 		if($_GET['referer'] == "logout"){
 			echo '<div class="alert alert-success alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>Du er nå logget ut!</div>';
@@ -45,7 +45,7 @@ function printLogOutToast(){
 }
 
 function printLogInToast(){
-	if($_GET['referer']){
+	if(isset($_GET['referer'])){
 		if($_GET['referer'] == "login"){
 			echo '<div class="alert alert-success alert-dismissible" role="alert">
   <button type="button" class="close" data-dismiss="alert"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>Du er nå logget inn!</div>';

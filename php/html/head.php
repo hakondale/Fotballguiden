@@ -1,7 +1,7 @@
  <?php 
   session_start(); 
 
- $testing = true;
+ $testing = false;
 
 if($testing){
   error_reporting(-1);
