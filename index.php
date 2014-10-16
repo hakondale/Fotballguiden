@@ -21,11 +21,23 @@ echo "<br> <br> <br> jklfsd";
 
 <!DOCTYPE html>
 <html>
-
+<head>
+<link rel="stylesheet" type="text/css" href="styles.css">
+ 
+<style>
+    
+.test{
+    border: 1px solid black;
+    
+}
+#rad1 {
+    background-color: grey;
+</style>   
+</head>
 <body>
     <br>
-    <div class="bs-example">
-        <table class="table table-hover table-bordered" align="center">
+  
+        <table class="test" align="center" style="width:80%">
             <thead>
                 <tr>
                     <th>#</th>
@@ -37,18 +49,24 @@ echo "<br> <br> <br> jklfsd";
             </thead>
             <tbody>
                 
-                <tr>
+                <tr id="rad1">
                     <td>1</td>
                     <td>Brann</td>
                     <td>100</td>
                     <td>+9000</td>
                     <td>9001</td>
                 </tr>
+                    <tr>
+                        <td>2</td>
+                          <td>RBK</td>
+                          <td>100</td>
+                          <td>+000</td>
+                        <td>9001</td>
+                    </tr>
                 <tr>
                     
             </tbody>
         </table>
-    </div>
 
     <?php
 
