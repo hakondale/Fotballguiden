@@ -26,8 +26,10 @@ echo "<br> <br> <br>";
     
 
 <?php
-$tippeligaen = new League(1);
-$tippeligaen->printLeagueTable();
+
+    $club = new Club();
+    $club->constructWithClub_url($_GET['club']);
+    $club->printLogo();
 
 printLogOutToast();
 printLogInToast();
