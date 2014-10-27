@@ -11,7 +11,36 @@ class League{
 			$this->name = $constructRowOfLeagues['name'];
 		}
 	}
+
+        public function printMatchTable(){
+            $queryOfMatches = mysql_query("SELECT match_id FROM clubs WHERE league_id = '$this->league_id' ORDER BY match_time DESC"); 
+            
+            echo' <div class="row">
+            <table class="table table-bordered" align="center" style="width:50">
+                <thead>
+                    <tr>
+                        <th>Tid</th>
+                        <th>Lag</th>
+                        <th>Kanal</th>
+                    </tr>
+                </thead>
+                <tbody>';
     
+            while($rowOfMatches = mysql_fetch_array($queryOfAllClubs)){
+
+            $match = new Match();
+            $match->constructWithMatch_id($rowOfMatches['club_id']);
+
+             echo "<tr> <td>" . $match_time . "</td>";
+             echo "<tr> <td>" . $match_teams . "</td>";
+             echo "<tr> <td>" . $match_channel . "</td>";
+
+            echo "</tr>";
+        
+        }
+        echo "</tbody></table>"; 
+    }
+
     public function printLeagueTable(){
         $queryOfAllClubs = mysql_query("SELECT club_id FROM clubs WHERE league_id = '$this->league_id' ORDER BY points DESC");
         
@@ -27,6 +56,8 @@ class League{
                 </tr>
             </thead>
             <tbody>';
+        
+        
         $possition = 1;
         
         while($rowOfClubs = mysql_fetch_array($queryOfAllClubs)){
@@ -39,10 +70,10 @@ class League{
             $tdType = 'class="success"';   
         }
         
-        else if ($possition == sizeof($rowOfClubs) || $possition == sizeof($rowOfClubs) - 1){
+        else if ($possition == 16 || $possition == 15){
             $tdType = 'class="danger"';
         }
-        else if ($possition == sizeof($rowOfClubs) - 2){
+        else if ($possition == 14){
             $tdType = 'class="warning"';
         }
             echo "<tr " . $tdType . "> <td>" . $possition . "</td>";
@@ -58,7 +89,6 @@ class League{
     }
     
 
-    
     public function getName(){
         return $this->name; 
     }
@@ -71,8 +101,6 @@ class League{
 		mysql_query("INSERT INTO leagues VALUES('$this->league_id','$this->name')");
 	}
 }
-
-
 
 
 ?>

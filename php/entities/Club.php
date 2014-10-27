@@ -30,7 +30,7 @@ class Club{
 			$this->club_color1 = $constructRowOfClubs['club_color1'];
 			$this->club_color2 = $constructRowOfClubs['club_color2'];
 			$this->players = $constructRowOfClubs['players'];
-			$this->games_played = $constructRowOfClubs['games_played'];
+			//$this->games_played = $constructRowOfClubs['games_played'];
 			$this->points = $constructRowOfClubs['points'];
 			$this->goals_home = $constructRowOfClubs['goals_home'];
 			$this->goals_away = $constructRowOfClubs['goals_away'];
@@ -156,8 +156,18 @@ class Club{
     }
     
     public function printLogo(){
-        echo '<img src="media/pics/logos/' . $this->club_url. '.png"/>';
+        echo '<img src="media/pics/logos/' . $this->club_url . '.png"/>';
     }
+    
+    
+    
+/*    public function printClubInfo($club_url){
+        echo ' <?php $' . $this->club_url . '->printGeneralInfo(); ? > ';
+        echo '<p> <a href= "/clubInfo/'. <?php $this->club_url ? >.' " > </a> </p>';
+        $currentClub = $this->club_url();
+        return $tezt->currentClub;
+    }
+*/    
     
 	public function saveInDB(){
 		mysql_query("INSERT INTO clubs VALUES('$this->club_id','$this->club_name','$this->twitter','$this->facebook','$this->year_founded','$this->description','$this->club_color1','$this->club_color2','$this->players','$this->games_played','$this->points','$this->goals_home','$this->goals_away' ,'$this->league_id')");

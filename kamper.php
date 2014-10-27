@@ -9,7 +9,7 @@ echo "<br> <br> <br>";
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="styles.css">
- 
+
 <style>
     
 .test{
@@ -23,14 +23,18 @@ echo "<br> <br> <br>";
 </head>
 <body>
     <br>
-    
 
 <?php
 
-    $club = new Club();
-    $club->constructWithClub_url($_GET['club']);
-    $club->printLogo();
- //   $club->printClubInfo();
+
+//public function getClubPageLink(){
+//        return '<a href="'. $this->getClubUrl().'"> '. $this->getName().'</a>';
+//        }
+
+
+$tippeligaen = new League(1);
+//$tippeligaen->printLeagueTable();
+//$match->printMatchesTable();
 
 printLogOutToast();
 printLogInToast();

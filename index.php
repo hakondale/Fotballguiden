@@ -9,7 +9,7 @@ echo "<br> <br> <br>";
 <html>
 <head>
 <link rel="stylesheet" type="text/css" href="styles.css">
- 
+
 <style>
     
 .test{
@@ -24,14 +24,33 @@ echo "<br> <br> <br>";
 <body>
     <br>
     
+    <div class="row">
+     <div class="col-md-4"> </div>
+        <div class="col-md-4" role="main">
+            <div id="tabell">
+                <a class="btn btn-primary btn-lg btn-block" align="center" style="width:50" href="/tabell.php">Tabell </a>
+            </div> <br>
 
+             <div id="kamper">
+                <a class="btn btn-primary btn-lg btn-block" align="center" style="width:50" href="/kamper.php">Rundens Kamper </a>
+            </div> <br>
+
+             <div id="lag">
+                <a class="btn btn-primary btn-lg btn-block" align="center" style="width:50" href="/lag.php">Lag </a>
+            </div>
+        </div>    
+    </div>
 <?php
-$tippeligaen = new League(1);
-$tippeligaen->printLeagueTable();
+
+
+//public function getClubPageLink(){
+//        return '<a href="'. $this->getClubUrl().'"> '. $this->getName().'</a>';
+//        }
+
+
 
 printLogOutToast();
 printLogInToast();
     ?>
     </div>
     </body>
-
