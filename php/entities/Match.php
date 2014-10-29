@@ -60,7 +60,7 @@ class Match{
     }
     
     
-    public function getDate($match_date){
+    public function getDate(){
         return $this->match_date;
     }
     public function setDate($match_date){
@@ -68,13 +68,16 @@ class Match{
     }
     
     
-    public function getChannel($match_channel){
-        return $this->match_date;   
+    public function getChannel(){
+        return $this->match_channel;   
     }
     public function setChannel($match_channel){
         $this->match_channel = $match_channel;
     }
        
+    public function getTimeTrimmed(){
+        return substr($this->getTime(), 0, -3);   
+    }
     
 	public function saveInDB(){
 		mysql_query("INSERT INTO clubs VALUES('$this->match_id','$this->league_id','$this->match_time' ,'$this->match_teams','$this->match_date')");

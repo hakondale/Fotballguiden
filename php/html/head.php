@@ -14,6 +14,7 @@ include "php/entities/User.php";
 include "php/entities/League.php";
 include "php/entities/Club.php";
 include "php/functions/userfunctions.php";
+include "php/entities/Match.php";
 
  ?>
 
@@ -25,11 +26,12 @@ include "php/functions/userfunctions.php";
                         
                 <meta name="viewport" content="width=device-width, initial-scale=1.0" content="text/html; charset=UTF-8">
                 <link href = "/css/bootstrap.css" rel = "stylesheet">
+                <link rel = "stylesheet" type = "text/css" href = "/css/background.css">  
         </head>
         <body>
         	<nav class="navbar navbar-default navbar-fixed-top navbar-inverse" role="navigation">
   				<div class="container">
-    <?php echo '<a class="navbar-brand" href="">Fotballguiden</a>'; ?>
+    <?php echo '<a class="navbar-brand" href="..">Fotballguiden</a>'; ?>
       <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
       <span class = "icon-bar"></span>
       <span class = "icon-bar"></span>
@@ -37,14 +39,13 @@ include "php/functions/userfunctions.php";
     </button>
     <div class = "collapse navbar-collapse navHeaderCollapse">
       <ul class = "nav navbar-nav">
-        <?php echo '<li><a href = "profil"><span class="glyphicon glyphicon-home"></span> Profil</a></li>'; ?>
-        <?php echo '<li><a href = "login"><span class="glyphicon glyphicon-home"></span> Logg inn</a></li>'; ?>
-        <?php echo '<li><a href = "registrer"><span class="glyphicon glyphicon-home"></span> Registrer</a></li>'; ?>
-        <?php echo '<li><a href = "php/post/logout.php"><span class="glyphicon glyphicon-home"></span> Logg ut</a></li>'; ?>
+        <?php echo '<li><a href = "tabell.php"><span class="glyphicon glyphicon-home"></span> Tabell</a></li>'; ?>
+        <?php echo '<li><a href = "kamper.php"><span class="glyphicon glyphicon-home"></span> Rundens Kamper </a></li>'; ?> 
+        <?php echo '<li><a href = "lag.php"><span class="glyphicon glyphicon-home"></span> Lag</a></li>'; ?>
         </ul>
       </li>
   				</div>
-			</nav><br><br><br><br><br>
+			</nav>
       <script src="http://code.jquery.com/jquery-latest.js"></script>
       <script src="/js/bootstrap.js"></script>
 

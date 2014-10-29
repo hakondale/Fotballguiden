@@ -23,7 +23,7 @@ echo "<br> <br> <br>";
 </head>
 <body>
     <br>
-    
+
     <div class="row">
      <div class="col-md-4"> </div>
         <div class="col-md-4" role="main">
@@ -43,14 +43,8 @@ echo "<br> <br> <br>";
 <?php
 
 
-//public function getClubPageLink(){
-//        return '<a href="'. $this->getClubUrl().'"> '. $this->getName().'</a>';
-//        }
-
-
-
 printLogOutToast();
 printLogInToast();
     ?>
-    </div>
-    </body>
+</div>
+</body>

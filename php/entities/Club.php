@@ -15,6 +15,7 @@ class Club{
     private $goals_home;
     private $goals_away;
     private $league_id;
+    private $twitter_hashtag;
     
 	public function constructWithClub_id($club_id){
 		$this->club_id = $club_id;
@@ -30,11 +31,12 @@ class Club{
 			$this->club_color1 = $constructRowOfClubs['club_color1'];
 			$this->club_color2 = $constructRowOfClubs['club_color2'];
 			$this->players = $constructRowOfClubs['players'];
-			//$this->games_played = $constructRowOfClubs['games_played'];
+			$this->games_played = $constructRowOfClubs['games_played'];
 			$this->points = $constructRowOfClubs['points'];
 			$this->goals_home = $constructRowOfClubs['goals_home'];
 			$this->goals_away = $constructRowOfClubs['goals_away'];
             $this->league_id = $constructRowOfClubs['league_id'];
+            $this->twitter_hashtag = $constructRowOfClubs['twitter_hashtag'];
 		}
 	}
 
@@ -57,6 +59,7 @@ class Club{
 			$this->goals_home = $constructRowOfClubs['goals_home'];
 			$this->goals_away = $constructRowOfClubs['goals_away'];
             $this->league_id = $constructRowOfClubs['league_id'];
+            $this->twitter_hashtag = $constructRowOfClubs['twitter_hashtag'];
 		}
 	}
     
@@ -73,11 +76,17 @@ class Club{
      public function set($club_url){
         $this-> club_url= $club_url;
     }
-     public function getTwitter(){
+     public function getTwitterClub(){
         return $this->twitter; 
     }
-     public function setTwitter($twitter){
+     public function setTwitterClub($twitter){
         $this->twitter = $twitter;
+    }
+    public function getTwitterHashtag(){
+        return $this->twitter_hashtag;
+    }      
+    public function setTwitterHashtag($twitter_hashtag){
+        $this->twitter_hashtag = $twitter_hashtag;
     }
        public function getFacebook(){
         return $this->facebook; 
@@ -156,21 +165,65 @@ class Club{
     }
     
     public function printLogo(){
-        echo '<img src="media/pics/logos/' . $this->club_url . '.png"/>';
+        echo '<img src="media/pics/logos/' . $this->club_url . '.png" width="50%" vertical-align="center"/>';
+    }
+    public function printHeaderLogo(){
+        echo '<img src="media/pics/headerLogo/' . $this->club_url . '.png" width="50%" vertical-align="center"/>';
+    }
+    public function printTeamPicture(){
+        echo '<img src="media/pics/players/' . $this->club_url . '.jpg" width="450" />';
     }
     
-    
-    
-/*    public function printClubInfo($club_url){
-        echo ' <?php $' . $this->club_url . '->printGeneralInfo(); ? > ';
-        echo '<p> <a href= "/clubInfo/'. <?php $this->club_url ? >.' " > </a> </p>';
-        $currentClub = $this->club_url();
-        return $tezt->currentClub;
+   public function getSimpleClubName(){
+        return $this->club_url; 
     }
-*/    
+    
+    public function printMatches(){
+        $limitMatches = 5;
+        
+         echo' <div class="well">
+            <table class="table table-bordered" align="middle" width="50%" vertical-align="center">
+                <thead>
+                    <tr>
+                        <th>Tid</th>
+                        <th>Lag</th>
+                        <th>Kanal</th>
+                    </tr>
+                </thead>
+                <tbody>';
+        
+        for($i = 0; $i < $limitMatches; $i++){
+               echo '<tr> 
+                    <td> 21:00 </td>
+                    <td> Brann - Sogndal </td>
+                    <td> Tv2 </td>
+                    </tr>';
+        }
+        echo '</tbody> </table> </div>';
+    }
+    
+    public function printTwitterClub(){
+        echo $this->getTwitterClub();
+    }
+    
+    public function printTwitterHashtag(){
+        echo $this->getTwitterHashtag();
+    }
+    public function printHistory(){
+        
+    }
+    
+    public function printPlayers(){
+        
+    }  
+    
+    public function printFunfacts(){
+        
+    }
+    
     
 	public function saveInDB(){
-		mysql_query("INSERT INTO clubs VALUES('$this->club_id','$this->club_name','$this->twitter','$this->facebook','$this->year_founded','$this->description','$this->club_color1','$this->club_color2','$this->players','$this->games_played','$this->points','$this->goals_home','$this->goals_away' ,'$this->league_id')");
+		mysql_query("INSERT INTO clubs VALUES('$this->club_id','$this->club_name','$this->twitter','$this->facebook','$this->year_founded','$this->description','$this->club_color1','$this->club_color2','$this->players','$this->games_played','$this->points','$this->goals_home','$this->goals_away' ,'$this->league_id', '$this->twitter_hashtag')");
 	}
 }
 

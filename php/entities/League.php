@@ -12,11 +12,11 @@ class League{
 		}
 	}
 
-        public function printMatchTable(){
-            $queryOfMatches = mysql_query("SELECT match_id FROM clubs WHERE league_id = '$this->league_id' ORDER BY match_time DESC"); 
+        public function printMatchesTable(){
+            $queryOfMatches = mysql_query("SELECT match_id FROM matches WHERE league_id = '$this->league_id' ORDER BY match_time DESC"); 
             
             echo' <div class="row">
-            <table class="table table-bordered" align="center" style="width:50">
+            <table class="table table-bordered set-bg" align="center" style="width:50%">
                 <thead>
                     <tr>
                         <th>Tid</th>
@@ -26,26 +26,25 @@ class League{
                 </thead>
                 <tbody>';
     
-            while($rowOfMatches = mysql_fetch_array($queryOfAllClubs)){
+            while($rowOfMatches = mysql_fetch_array($queryOfMatches)){
 
             $match = new Match();
-            $match->constructWithMatch_id($rowOfMatches['club_id']);
+            $match->constructWithMatch_id($rowOfMatches['match_id']);
 
-             echo "<tr> <td>" . $match_time . "</td>";
-             echo "<tr> <td>" . $match_teams . "</td>";
-             echo "<tr> <td>" . $match_channel . "</td>";
+             echo "<tr> <td>" . $match->getTimeTrimmed() . "</td>";
+             echo "<td>" . $match->getTeams() . "</td>";
+             echo "<td>" . $match->getChannel() . "</td>";
 
-            echo "</tr>";
-        
+            echo '</tr>';
         }
-        echo "</tbody></table>"; 
+            echo '</tbody> </table>'; 
     }
 
     public function printLeagueTable(){
         $queryOfAllClubs = mysql_query("SELECT club_id FROM clubs WHERE league_id = '$this->league_id' ORDER BY points DESC");
         
         echo '   <div class="row">
-        <table class="table table-bordered" align="center" style="width:50%">
+        <table class="table table-bordered set-bg" align="center" style="width:50%">
             <thead>
                 <tr>
                     <th>#</th>
@@ -88,7 +87,35 @@ class League{
         echo "</tbody></table>";
     }
     
+    public function printAllClubLogos(){ 
+       echo '
+            <div class="row">
+            <table align="center" style="width:50%">
+                <thead>
+                    <tr>
+                    </tr>
+                </thead>
+            </div>
+                <tbody>
+                    '; 
+        $maxteller = 5;
+        $minteller = 0;
+        
+        for($i=0; $i < 4; $i++){
+            $queryOfAllClubs = mysql_query("SELECT club_id FROM clubs WHERE league_id = '$this->league_id' AND club_id < '".$maxteller."' AND club_id > '".$minteller."' ORDER BY club_id DESC");
+            while($rowOfClubs = mysql_fetch_array($queryOfAllClubs)){
+                $club = new Club();
+                $club->constructWithClub_id($rowOfClubs['club_id']);
+                echo '<td align= "center"><a href=/club.php?club=' . $club->getSimpleClubName() . '> <img src="http://fotballguiden.nu/media/pics/logos/' . $club->getSimpleClubName() . '.png"  width="100" vertical-align="middle" > </a> </td>'; 
+            }
+            $maxteller +=4;
+            $minteller +=4;
+            echo '<tr> </tr>';
+        }
+        echo ' </tbody> ';
 
+    }
+    
     public function getName(){
         return $this->name; 
     }

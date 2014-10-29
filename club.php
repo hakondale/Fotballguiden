@@ -29,8 +29,30 @@ echo "<br> <br> <br>";
 
     $club = new Club();
     $club->constructWithClub_url($_GET['club']);
-    $club->printLogo();
- //   $club->printClubInfo();
+    echo '<div id="main" class="container" role="main">';
+    echo '<div class="row" align="center">';
+    $club->printHeaderLogo();
+    echo '</div>';
+    echo '<div class="row">';
+    echo '<div class="col-md-5">';
+    $club->printMatches();
+    echo '</div>';
+    echo '<div class="col-md-5">';
+    $club->printTwitterClub();
+    echo '</div>';
+    echo '</div>';
+    echo '<div class="row">';
+    echo '<div class="col-md-5">';
+    $club->printTeamPicture();
+    echo '</div>';
+    echo '<div class="col-md-5">';
+    $club->printTwitterHashtag();
+    echo '</div>';
+    echo '</div>';
+    echo '</div>';
+
+
+
 
 printLogOutToast();
 printLogInToast();
