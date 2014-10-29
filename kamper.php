@@ -33,13 +33,8 @@ echo "<br> <br> <br>";
 <?php
 
 
-//public function getClubPageLink(){
-//        return '<a href="'. $this->getClubUrl().'"> '. $this->getName().'</a>';
-//        }
-
-
 $tippeligaen = new League(1);
-//$tippeligaen->printLeagueTable();
+$tippeligaen->printCalendar();
 $tippeligaen->printMatchesTable();
 
 
