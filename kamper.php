@@ -34,7 +34,7 @@ echo "<br> <br> <br>";
 
 
 $tippeligaen = new League(1);
-$tippeligaen->printCalendar();
+//$tippeligaen->printCalendar();
 $tippeligaen->printMatchesTable();
 
 

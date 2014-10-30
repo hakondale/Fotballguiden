@@ -210,15 +210,88 @@ class Club{
         echo $this->getTwitterHashtag();
     }
     public function printHistory(){
-        
+        return " <p> Sportsklubben Brann ble stiftet 26. september 1908, på Johnsens Cafe (som lå omtrent der Telegrafbygget ligger i dag). Den som tok intiativ til dette, var Christen K. Gran, og sammen med han var Birger Gjestland, Hans Larsen, Inggard Ellerstsen, Hans K. Gran, Lars Gran, Chr. Borch, Erling Lothe, Herman Mathiesen og Sverre Sturlung. </p<
+
+<p> Klubbens navn ble da Ski og Fotboldklubben Brann, etter forslag fra Birger Gjestland. Hans larsen ble klubbens første formann. </p>
+
+<p>Branns aller første kamp ble spilt 1. januar 1909 mot Bergens fotballklubb, og endte med uavgjort 1 – 1.  Den første seieren kom i august samme år, da klubben vant 3 – 2 mot Stavanger Idrettsforening.  Stavanger var også motstander første gang brann deltok i NM. 14. september 1913 tapte brann mot siddisene.</p>
+
+
+
+<p>1917 var det virkelig store gjennombruddsåret for Brann. Klubben kom helt til finalen i NM, der de gikk på et 4 -1 tap mot Sarpsborg. Det var også dette året brann sikret seg arealet der vår kjære stadion står i dag. Den 25 mai var det innvielseskamp på Stadion mot landslaget, og brann tapte 2 – 6, ikke overraskende i øsende regnvær. Det var også i 1917 brann fikk enda en ny idrettsgren på Stadion, nemlig friidrett. Året etter holdt klubben NM i friidrett på Brann stadion, og de vant tre av øvelsene.</p>
+
+<p>Det har vært mer enn bare fotball i klubben. Det har blandt annet vært avdelinger for ishockey, bordtennis og håndball. I 1922 ble brann faktisk kretsmestere i ishockey. Per i dag er det bare fotball som er i fokus for klubben. </p>";
     }
     
-    public function printPlayers(){
-        
+    public function printTeam(){
+        return "spillere";
     }  
     
-    public function printFunfacts(){
-        
+    public function printTrivia(){
+        return "
+                <p> <b> Top spillere: </b> </p>
+                <p> Rolf Birger Pedersen har scoret flest mål for brann med 132 mål i perioden 1957-68, 1972 </p>
+                <p>Alexander Olsen har spillt flest landskamper i brann med 37 kamper </p>
+                <p> <b> Meritter:  </b> </p>
+                <p>Seriemestere:1961-62, 1963 og 2007.</p>
+                <p>Cupmestere: 1923, 1925, 1972, 1976, 1982 og 2004.</p>
+                <p>Cupvinnercupen: Kvartfinale 1996–97 Slo blant annet PSV Eindhoven.</p>
+                <p>UEFA-cupen: 32-dels finale 2007</p>
+                <p>Mesterligaen : 3.kvalifiseringsrunde 2008</p>
+                <p>Royal League: Kvartfinale 2006-07</p>
+                <p>Intertoto cup : 1. runde 1999</p>";
+    }
+    
+    public function printAccordion(){
+     echo '
+     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+     
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="history">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+         <midtstill> Historie </midtstill>
+        </a>
+      </h4>
+    </div>
+    <div id="collapseOne" class="panel-collapse collapse" role="tabpanel" aria-labelledby="history">
+      <div class="panel-body">
+        ' . $this->printHistory() . '
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="team">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+          Spillere
+        </a>
+      </h4>
+    </div>
+    <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="team">
+      <div class="panel-body">
+        ' . $this->printTeam() . '
+      </div>
+    </div>
+  </div>
+  
+  <div class="panel panel-default">
+    <div class="panel-heading" role="tab" id="trivia">
+      <h4 class="panel-title">
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+          Trivia 
+        </a>
+      </h4>
+    </div>
+    <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="trivia">
+      <div class="panel-body">
+        ' . $this->printTrivia() . '
+      </div>
+    </div>
+  </div>
+  
+</div>'; 
     }
     
     

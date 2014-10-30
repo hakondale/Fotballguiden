@@ -13,7 +13,7 @@ class League{
 	}
 
         public function printMatchesTable(){
-            $queryOfMatches = mysql_query("SELECT match_id FROM matches WHERE league_id = '$this->league_id' ORDER BY match_time DESC"); 
+            $queryOfMatches = mysql_query("SELECT match_id FROM matches WHERE league_id = '$this->league_id' ORDER BY match_date, match_time DESC"); 
             
             echo' <div class="row">
             <table class="table table-bordered set-bg" align="center" style="width:50%">

@@ -50,6 +50,7 @@ echo "<br> <br> <br>";
     echo '</div>';
     echo '</div>';
     echo '</div>';
+    $club->printAccordion();
 
 
 
