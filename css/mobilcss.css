@@ -1,0 +1,16 @@
+.navbar-default .navbar-brand {
+  color: rgba(#5c8ed1);
+}
+.navbar-default .navbar-brand:hover,
+.navbar-default .navbar-brand:focus {
+  color: rgba(#5c8ed1);
+  background-color: transparent;
+}
+.navbar-inverse .navbar-brand {
+  color: rgba(#5c8ed1);
+}
+.navbar-inverse .navbar-brand:hover,
+.navbar-inverse .navbar-brand:focus {
+  color: rgba(#5c8ed1);
+  background-color: transparent;
+}

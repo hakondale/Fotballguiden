@@ -29,6 +29,28 @@ echo "<br> <br> <br>";
 <body>
     <br>
     
+    <script type="text/javascript">
+        
+        document.onkeydown = checkKey;
+
+        function checkKey(e) {
+
+            e = e || window.event;
+
+            if (e.keyCode == '39') {
+                // right arrow
+                document.location = "/lag.php";
+            }
+            else if (e.keyCode == '37') {
+                // left arrow
+                document.location = "/tabell.php";
+            }
+        }
+    </script>
+    
+    <script type="text/javascript"> 
+    $('.nav a:contains("Rundens Kamper")').parent().addClass('active');
+    </script>
 
 <?php
 
@@ -36,8 +58,6 @@ echo "<br> <br> <br>";
 $tippeligaen = new League(1);
 //$tippeligaen->printCalendar();
 $tippeligaen->printMatchesTable();
-
-
 
 
 printLogOutToast();

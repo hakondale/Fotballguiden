@@ -19,9 +19,14 @@ echo "<br> <br> <br>";
 #rad1 {
     background-color: grey;
 }
+    
 </style>   
 </head>
 <body>
+<br>
+    <script type="text/javascript"> 
+    $('.nav a:contains("Nyheter")').parent().addClass('active');
+    </script>
 
     <script type="text/javascript">
         
@@ -33,34 +38,23 @@ echo "<br> <br> <br>";
 
             if (e.keyCode == '39') {
                 // right arrow
-                document.location = "/kamper.php";
+                document.location = "/tabell.php";
             }
             else if (e.keyCode == '37') {
                 // left arrow
-                document.location = "/desktop-index.php";
+                document.location ="/lag.php";
             }
         }
-    </script> 
-    
-    <script type="text/javascript"> 
-    $('.nav a:contains("Tabell")').parent().addClass('active');
     </script>
     
 <?php
+    
+    
+    $tippeligaen = new League(1);
+    $tippeligaen->printNews();
 
-
-//public function getClubPageLink(){
-//        return '<a href="'. $this->getClubUrl().'"> '. $this->getName().'</a>';
-//        }
-
-
-$tippeligaen = new League(1);
-$tippeligaen->printLeagueTable();
-
-
-printLogOutToast();
-printLogInToast();
-    ?>
-    </div>
-    </body>
-
+    printLogOutToast();
+    printLogInToast();
+?>
+</div>
+</body>

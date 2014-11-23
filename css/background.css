@@ -6,16 +6,119 @@ background-size: cover;
 background-position: top center !important;
 background-repeat: no-repeat !important;
 background-attachment: fixed;
+max-width:100%;
 }
 
 .set-bg {
        background-color: rgba(255, 255, 255, 0.82);
 }
 
+body, html {width:100%;}
+
 img {
     border-radius: 5px;
+    max-width: 100%;
+    overflow: hidden;
+}
+
+.img .navpic{
+    border-radius: 0px;
+    max-width: 100%;
 }
 
 midtstill-{
     text-align: center;
 }
+
+.panel-title a {
+    display: block;
+    padding: 10px 15px;
+    margin: -10px -15px;
+}
+
+.jumbotron {
+   background: rgb(255, 255, 255); 
+   background: rgba(255, 255, 255, 0.74); 
+    pp {
+        font-size: 5em;  
+        
+    }
+}
+
+.navbar .nav > li > a {
+    color:  #ddd;
+}
+
+.navbar-default .navbar-brand {
+    color: #5c8ed1;
+}
+
+html, body {
+    max-width: 100%;
+    max-heigth: 100%;
+    overflow-x: hidden;
+}
+
+.jumbotron {
+    border-radius: 6px;
+}
+
+.nav-collapse.collapse {
+    height: auto !important;
+    overflow: visible !important;
+}
+
+.stButton .stButton_gradient {
+height: 24px !important;
+}
+
+.stButton .stFb, .stButton .stTwbutton, .stButton .stMainServices {
+height: 24px !important;
+}
+
+#share-buttons img {
+width: 35px;
+padding: 5px;
+border: 0;
+box-shadow: 0;
+display: inline;
+margin-top: 8px !important;
+}
+
+
+
+
+.img.top {
+    vertical-align: text-top;
+}
+
+.img.bottom {
+    vertical-align350: text-bottom;
+}
+
+
+
+.navbar { position:relative; margin:0px; }
+.navpic { position:absolute;  border-radius: 0px;}
+#bilde {border-radius: 0px; width:100%; overflow:hidden; height:13px;}
+.klasse {border-radius: 0px; overflow:hidden; width:100%;}
+
+html, body {overflow-x: hidden; max-width:100%; }
+
+.table-responsive {overflow-x:auto;}
+
+tbody {
+ width: 200px;
+ height: 400px;
+ overflow-x: auto;
+}
+
+.table-container
+{
+	width: 100%;
+	overflow-y: auto;
+	_overflow: auto;
+	margin: 0 0 1em;
+}
+
+

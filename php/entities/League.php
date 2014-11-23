@@ -1,4 +1,5 @@
 <?php
+
 class League{
 	private $league_id;
 	private $name;
@@ -15,10 +16,11 @@ class League{
         public function printMatchesTable(){
             $queryOfMatches = mysql_query("SELECT match_id FROM matches WHERE league_id = '$this->league_id' ORDER BY match_date, match_time DESC"); 
             
-            echo' <div class="row">
+            echo ' <div class="row">
             <table class="table table-bordered set-bg" align="center" style="width:50%">
                 <thead>
                     <tr>
+                        <th>Dato</th>
                         <th>Tid</th>
                         <th>Lag</th>
                         <th>Kanal</th>
@@ -31,7 +33,8 @@ class League{
             $match = new Match();
             $match->constructWithMatch_id($rowOfMatches['match_id']);
 
-             echo "<tr> <td>" . $match->getTimeTrimmed() . "</td>";
+             echo "<tr><td>" .  $match->getDate() . "</td>";
+             echo "<td>" . $match->getTimeTrimmed() . "</td>";
              echo "<td>" . $match->getTeams() . "</td>";
              echo "<td>" . $match->getChannel() . "</td>";
 
@@ -40,12 +43,15 @@ class League{
             echo '</tbody> </table>'; 
     }
 
-    public function printLeagueTable(){
+    public function printLeagueTable(){ 
         $queryOfAllClubs = mysql_query("SELECT club_id FROM clubs WHERE league_id = '$this->league_id' ORDER BY points DESC");
         
-        echo '   <div class="row">
-        <table class="table table-bordered set-bg" align="center" style="width:50%">
+        echo '   
+        
+        <div class="table-container">
+        <table class="table table-responsive table-bordered set-bg" align="center" style="width:50% ">
             <thead>
+            <tbody>
                 <tr>
                     <th>#</th>
                     <th>Lag</th>
@@ -53,8 +59,9 @@ class League{
                     <th>Målforskjell</th>
                     <th>Poeng</th>
                 </tr>
+            </tbody>    
             </thead>
-            <tbody>';
+            ';
         
         
         $possition = 1;
@@ -84,7 +91,7 @@ class League{
             echo "</tr>";
             $possition++;
         }
-        echo "</tbody></table>";
+        echo "</div></tbody></table>";
     }
     
     public function printAllClubLogos(){ 
@@ -116,6 +123,61 @@ class League{
 
     }
     
+    public function printNews(){
+        $queryOfNews = mysql_query("SELECT news_id FROM newss WHERE league_id = '$this->league_id' ORDER BY news_id DESC");
+        echo '
+            <div class="row">
+                <div class="col-md-2"> </div>
+                <div class="col-md-8" role="main">
+
+                    <div class="jumbotron">
+        ';
+        
+
+        $index = 0;
+
+        while($rowOfNews = mysql_fetch_array($queryOfNews)){
+        ?>
+
+
+        <?php
+            
+
+            $news = new News();
+            $news->constructWithNews_id($rowOfNews['news_id']);
+            echo '
+                        
+                        
+                        
+                        <h2><img class="bottom" src="' . $news->getNewsSource() . ' " width="30px" ><b> ' . $news->getNewsTitle() . ' </b></h2>
+                    
+                        <pp hidden><img id="overlay" src="' . $news->getNewsSource() . '" ></pp>
+                        <p><img id="base" src="' . $news->getNewsPicture() . '" width=" ' . $news->getNewsImageSize() . '"></p>
+                        
+                        '; ?> 
+                           
+                        <?php $index++; echo '
+            
+    
+                        
+                        <h5> <b>' . $news->getNewsBread() . ' </b></h5>
+                        <pp> ' . $news->getNewsPreview() . '<a href=" ' . $news->getNewsUrl() . ' ">Les mer</a> </pp>
+            
+                    <p> </p>
+            ';
+        }
+        echo '
+                    </div>
+                </div>
+            </div>
+            ';
+
+    }
+    
+    public function getAllLogos(){
+        return printAllClubLogos();
+    }
+        
     public function getName(){
         return $this->name; 
     }

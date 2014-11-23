@@ -24,32 +24,38 @@ echo "<br> <br> <br>";
 <body>
     <br>
     
+    <script type="text/javascript">
+        
+        document.onkeydown = checkKey;
+
+        function checkKey(e) {
+
+            e = e || window.event;
+
+            if (e.keyCode == '19') {
+                // right arrow
+                document.location = "http://kidculture.files.wordpress.com/2011/04/easter-egg.jpg";
+            }
+            else if (e.keyCode == '37') {
+                // left arrow
+                document.location = "/kamper.php";
+            }
+            else if (e.keyCode == '39') {
+                // left arrow
+                document.location = "/desktop-index.php";
+            }
+        }
+    </script>
+    
+    <script type="text/javascript"> 
+    $('.nav a:contains("Lag")').parent().addClass('active');
+    </script>
+    
 <?php
-
-function printTeamLogos(){
-    
-}
-/*		
-<img class="irc_mi" style="top-center: 100px;" src="http://fotballguiden.nu/media/pics/logos/' ' .png" width="80" height="80">
-
-			
-
-	</center>
-</body>
-
-</html>
-<img src="http://fotballguiden.nu/media/pics/logos/molde.png"  width="200" height="85" alt="Computer Hope">
-*/
-
-//public function getClubPageLink(){
-//        return '<a href="'. $this->getClubUrl().'"> '. $this->getName().'</a>';
-//        }
-    
-
-
+echo ' <div class="container">';
 $tippeligaen = new League(1);
 $tippeligaen->printAllClubLogos();
-//$tippeligaen->printLeagueTable();
+echo ' </div>';
  
 
 printLogOutToast();

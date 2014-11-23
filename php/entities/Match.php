@@ -20,29 +20,6 @@ class Match{
 			$this->match_channel = $constructRowOfMatches['match_channel'];
 		}
 	}
-
-/*    public function constructWithClub_url($club_url){
-		$this->club_url = $club_url;
-		$constructQueryOfClubs = mysql_query("SELECT * FROM clubs WHERE club_url = '$club_url'");
-        
-		while($constructRowOfClubs = mysql_fetch_array($constructQueryOfClubs)){
-			$this->club_name = $constructRowOfClubs['club_name'];
-			$this->club_id = $constructRowOfClubs['club_id'];
-			$this->twitter = $constructRowOfClubs['twitter'];
-			$this->facebook = $constructRowOfClubs['facebook'];
-			$this->year_founded = $constructRowOfClubs['year_founded'];
-			$this->description = $constructRowOfClubs['description'];
-			$this->club_color1 = $constructRowOfClubs['club_color1'];
-			$this->club_color2 = $constructRowOfClubs['club_color2'];
-			$this->players = $constructRowOfClubs['players'];
-			$this->games_played = $constructRowOfClubs['games_played'];
-			$this->points = $constructRowOfClubs['points'];
-			$this->goals_home = $constructRowOfClubs['goals_home'];
-			$this->goals_away = $constructRowOfClubs['goals_away'];
-            $this->league_id = $constructRowOfClubs['league_id'];
-		}
-	} 
-*/
     
     public function getTime(){
         return $this->match_time; 

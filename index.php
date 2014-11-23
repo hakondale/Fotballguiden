@@ -19,32 +19,31 @@ echo "<br> <br> <br>";
 #rad1 {
     background-color: grey;
 }
+    
 </style>   
 </head>
 <body>
-    <br>
 
-    <div class="row">
-     <div class="col-md-4"> </div>
-        <div class="col-md-4" role="main">
-            <div id="tabell">
-                <a class="btn btn-primary btn-lg btn-block" align="center" style="width:50" href="/tabell.php">Tabell </a>
-            </div> <br>
+    <script type="text/javascript">
+        <!--
+        if (screen.width <= 699) {
+            document.location = "/mobil-index.php";
+        }else{ 
+            document.location = "/desktop-index.php";
+        }
+        //-->
+        
+        
+    </script>
 
-             <div id="kamper">
-                <a class="btn btn-primary btn-lg btn-block" align="center" style="width:50" href="/kamper.php">Rundens Kamper </a>
-            </div> <br>
-
-             <div id="lag">
-                <a class="btn btn-primary btn-lg btn-block" align="center" style="width:50" href="/lag.php">Lag </a>
-            </div>
-        </div>    
-    </div>
 <?php
+    
+    
+    //$tippeligaen = new League(1);
+    //$tippeligaen->printNews();
 
-
-printLogOutToast();
-printLogInToast();
-    ?>
+    printLogOutToast();
+    printLogInToast();
+?>
 </div>
 </body>

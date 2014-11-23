@@ -178,6 +178,12 @@ class Club{
         return $this->club_url; 
     }
     
+    
+    //$this->getAllLogos();
+    
+
+    
+    
     public function printMatches(){
         $limitMatches = 5;
         
@@ -223,9 +229,34 @@ class Club{
 <p>Det har vært mer enn bare fotball i klubben. Det har blandt annet vært avdelinger for ishockey, bordtennis og håndball. I 1922 ble brann faktisk kretsmestere i ishockey. Per i dag er det bare fotball som er i fokus for klubben. </p>";
     }
     
-    public function printTeam(){
-        return "spillere";
+    public function printTeam1(){
+        echo ' 
+        
+        <div class="row">
+            <table align="center" style="width:50%">
+                <thead>
+                    <tr>
+                    </tr>
+                </thead>
+            </div>
+                <tbody>
+                    ';
+        
+        for($i=0; $i < 6; $i++){
+           
+           
+                echo '<td align= "center"> <img src="http://fotballguiden.nu/media/pics/logos/brann.png"  width="100" vertical-align="middle" > </a> </td> 
+                <tr> </tr>
+                </tbody> ';
+
     }  
+    }  
+    
+     public function printTeam(){
+        echo ' <p>
+                    <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/39510.png">
+                </p>';
+     }
     
     public function printTrivia(){
         return "
@@ -242,15 +273,18 @@ class Club{
                 <p>Intertoto cup : 1. runde 1999</p>";
     }
     
+    
+    
+    
     public function printAccordion(){
-     echo '
-     <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+     echo '<br>
+     <div class="panel-group" id="accordion" aria-multiselectable="true">
      
-  <div class="panel panel-default">
-    <div class="panel-heading" role="tab" id="history">
+  <div class="panel panel-default "> 
+    <div class="panel-heading">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
-         <midtstill> Historie </midtstill>
+       <a  data-toggle="collapse" data-parent="#accordion" href="#collapseOne" data-target="#collapseOne" align="center">
+        <span class="glyphicon glyphicon-chevron-down"></span> <b>    Historie    </b> <span class="glyphicon glyphicon-chevron-down"></span>
         </a>
       </h4>
     </div>
@@ -264,14 +298,14 @@ class Club{
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="team">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-          Spillere
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo" align="center">
+         <span class="glyphicon glyphicon-chevron-down"></span> <b>    Spillere    </b> <span class="glyphicon glyphicon-chevron-down"></span>
         </a>
       </h4>
     </div>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="team">
       <div class="panel-body">
-        ' . $this->printTeam() . '
+        ' . "a" .  '
       </div>
     </div>
   </div>
@@ -279,8 +313,8 @@ class Club{
   <div class="panel panel-default">
     <div class="panel-heading" role="tab" id="trivia">
       <h4 class="panel-title">
-        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-          Trivia 
+        <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree" align="center">
+         <span class="glyphicon glyphicon-chevron-down"></span> <b>      Trivia      </b> <span class="glyphicon glyphicon-chevron-down"></span>
         </a>
       </h4>
     </div>
@@ -304,3 +338,15 @@ class Club{
 
 
 ?>
+
+<a href="http://jquery.com/"></a>
+    <script src="jquery.js"></script>
+    <script>
+        
+    $('.scrollToBottom').click(function () {
+     $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+    return false;
+    });
+        
+    </script>
+
