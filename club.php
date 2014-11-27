@@ -35,21 +35,21 @@ echo "<br> <br> <br>";
     echo '<div class="row" align="center">';
     $club->printHeaderLogo();
 
-    echo '  <br> <br><div > <a class="btn btn-primary btn-lg btn-block" align="center" id="b1" class="scrollToBottom">  Faktaseksjon  </a> </div> <br>';
+    echo '  <br> <br><div > <a class="btn btn-danger btn-lg btn-block" align="center" id="b1" class="scrollToBottom">  Faktaseksjon  </a> </div> <br>';
     echo '</div>';
     echo '<div class="row">';
-    echo '<div class="col-md-5">';
+    echo '<div class="col-md-6">';
     $club->printMatches();
     echo '</div>';
-    echo '<div class="col-md-5">';
+    echo '<div class="col-md-6">';
     $club->printTwitterClub();
     echo '</div>';
     echo '</div>';
     echo '<div class="row">';
-    echo '<div class="col-md-5">';
+    echo '<div class="col-md-6">';
     $club->printTeamPicture();
     echo '</div>';
-    echo '<div class="col-md-5">';
+    echo '<div class="col-md-6">';
     $club->printTwitterHashtag();
     echo '</div>';
     echo '</div>';
@@ -75,4 +75,43 @@ printLogInToast();
     return false;
     });
         
+    </script>
+
+
+<script type="text/javascript"> 
+$('body').on('click', function (e) {
+    $('[data-toggle="popover"]').each(function () {
+        //the 'is' for buttons that trigger popups
+        //the 'has' for icons within a button that triggers a popup
+        if (!$(this).is(e.target) && $(this).has(e.target).length === 0 && $('.popover').has(e.target).length === 0) {
+            $(this).popover('hide');
+        }
+    });
+});
+    
+$("[data-toggle=popover]")
+.popover({html:true})
+</script>
+
+<script type="text/javascript">
+        
+        document.onkeydown = checkKey;
+
+        function checkKey(e) {
+
+            e = e || window.event;
+
+            if (e.keyCode == '39') {
+                // right arrow
+                document.location = "/lag.php";
+            }
+            else if (e.keyCode == '37') {
+                // left arrow
+                document.location = "/lag.php";
+            }
+        }
+    </script>
+    
+    <script type="text/javascript"> 
+    $('.nav a:contains("Lag")').parent().addClass('active');
     </script>

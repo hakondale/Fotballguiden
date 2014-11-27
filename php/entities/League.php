@@ -14,12 +14,51 @@ class League{
 	}
 
         public function printMatchesTable(){
+            echo '
+            <div class="container">
+                    <div class="row">
+                        <div class="col-md-1">
+                                <button type="button" class="btn btn-default btn-lg">Forrige Runde</button>
+                        </div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-1"></div>
+                            <div class="col-md-1">
+                                <button type="button" id="nesteRunde" class="btn btn-default btn-lg">Neste Runde</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+             </div>
+                <p>
+                </p>
+            
+            <div class="container" align="right" style="width:53%">
+            <div class="btn-group">
+  <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown" aria-expanded="false" >
+    Filtrer <span class="caret" ></span>
+  </button>
+  <ul class="dropdown-menu" role="menu">
+    <li><a href="#">Csports</a></li>
+    <li><a href="#">TV2</a></li>
+  </ul>
+</div></div>';
             $queryOfMatches = mysql_query("SELECT match_id FROM matches WHERE league_id = '$this->league_id' ORDER BY match_date, match_time DESC"); 
             
             echo ' <div class="row">
+            
             <table class="table table-bordered set-bg" align="center" style="width:50%">
+            
                 <thead>
+                
                     <tr>
+                    
                         <th>Dato</th>
                         <th>Tid</th>
                         <th>Lag</th>
@@ -109,11 +148,11 @@ class League{
         $minteller = 0;
         
         for($i=0; $i < 4; $i++){
-            $queryOfAllClubs = mysql_query("SELECT club_id FROM clubs WHERE league_id = '$this->league_id' AND club_id < '".$maxteller."' AND club_id > '".$minteller."' ORDER BY club_id DESC");
+            $queryOfAllClubs = mysql_query("SELECT club_id FROM clubs WHERE league_id = '$this->league_id' AND club_id < '".$maxteller."' AND club_id > '".$minteller."' ORDER BY club_url");
             while($rowOfClubs = mysql_fetch_array($queryOfAllClubs)){
                 $club = new Club();
                 $club->constructWithClub_id($rowOfClubs['club_id']);
-                echo '<td align= "center"><a href=/club.php?club=' . $club->getSimpleClubName() . '> <img src="http://fotballguiden.nu/media/pics/logos/' . $club->getSimpleClubName() . '.png"  width="100" vertical-align="middle" > </a> </td>'; 
+                echo '<td align= "center"><a href=/club.php?club=' . $club->getSimpleClubName() . '> <img src="http://fotballguiden.nu/media/pics/logos/' . $club->getSimpleClubName() . '.png"  width="100" vertical-align="middle" > </a> <br><br><span class="label label-default">'.  $club->getName() . '</span></td>'; 
             }
             $maxteller +=4;
             $minteller +=4;

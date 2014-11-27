@@ -30,7 +30,8 @@ echo "<br> <br> <br>";
     
                 <div class="jumbotron" >
                     <h2>Nyheter</h2>
-                    <pp>Her vises nyheter fra tippeligaen. </pp>
+                    <pp>Her vises nyheter og aktuelle toppsaker fra tippeligaen. Alt fra store overganger til de siste praktscoringene fra forrige tippeliga-runde.   </pp>
+                    <pp>På nyhetssiden kan du lett holde deg oppdatert på de siste sportsnyhetene fra alle de store norske nettavisene.</pp>
                     
                     <h2>Tabell</h2>
                     <pp>Dette er en oversikt over plasseringene til lagene i tippeligaen sortert etter plassering.</pp>
@@ -42,12 +43,26 @@ echo "<br> <br> <br>";
                     <pp>Denne listen kan du finne ved å trykke på "Rundens Kamper"-knappen på toppen av siden, eller på hjem-siden.</pp>
                     
                     <h2>Lag</h2>
-                    <pp>Her kan man trykke på logoen til laget du ønsker informasjon om for å gå inn på lagsiden deres. På lagsiden kan man se "tweets" for det respektive laget sin hashtag eller fra lagets ofisielle twitter-konto. Man kan også se diverse fakta om klubben, og deres 5 neste kamper de skal spille.</pp>
+                    <pp>Her kan man trykke på logoen til laget du ønsker informasjon om for å gå inn på lagsiden deres. På lagsiden kan man se "tweets" for det respektive laget sin hashtag eller fra lagets offisielle twitter-konto. Man kan også se diverse fakta om klubben, og deres 5 neste kamper de skal spille.</pp>
                     <pp>Denne listen kan du finne ved å trykke på "lag"-knappen på toppen av siden, eller på hjem-siden.</pp>
+                    
+                    <h2>Snarvei</h2>
+                    <pp>
+For å hurtig navigere mellom de ulike sidene, kan du ta i bruk piltastene på tastaturet. Høyre piltast vil navigere mot høyre på navigasjonsbaren. Venstre piltast vil navigere mot venstre på navigasjonsbaren.
+                    </pp>
                     
                     <h2>Kontakt oss!</h2>
                     <pp> Denne siden er utviklet av Erik  Oskar Zetterquist, Stig Harald Svendsvoll, Håkon H. Dale, Lars Ole B. Vatne, og Magnus Engestøl. </pp>
                     <pp> Har du spørsmål eller andre hendvendelser kan du sende mail til <a href= "http://www.gmail.com" >fotballguiden@gmail.com</a> </pp>
+                    
+                    <h2>Fargeblind?</h2>
+                    
+                    <pp> 
+                        Ved å trykke på øye-ikonet til høyre i headeren, vil bakgrunnen forandre seg til svart. Dermed vil de som er fargeblinde lettere kunne lese teksten på de forskjellige sidene. For få tilbake det originale bakgrunnsbildet kan du enten oppdatere nettsiden, eller navigere til en annen side.
+                      </pp>
+            
+                    
+
                     
                 </div>
             </div>
@@ -57,6 +72,8 @@ echo "<br> <br> <br>";
     $('.nav a:contains("Hjelp")').parent().addClass('active');
     </script>
     
+    
+    
 <?php
 
 
@@ -65,4 +82,5 @@ printLogInToast();
     ?>
     </div>
     </body>
+</html>
 
