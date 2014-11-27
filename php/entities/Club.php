@@ -171,7 +171,7 @@ class Club{
         echo '<img src="media/pics/headerLogo/' . $this->club_url . '.png" width="50%" vertical-align="center"/>';
     }
     public function printTeamPicture(){
-        echo '<img src="media/pics/players/' . $this->club_url . '.jpg" width="600" />';
+        echo '<img src="media/pics/players/' . $this->club_url . '.jpg" width="450" />';
     }
     
    public function getSimpleClubName(){
@@ -228,102 +228,38 @@ class Club{
 
 <p>Det har vært mer enn bare fotball i klubben. Det har blandt annet vært avdelinger for ishockey, bordtennis og håndball. I 1922 ble brann faktisk kretsmestere i ishockey. Per i dag er det bare fotball som er i fokus for klubben. </p>";
     }
-     
-
     
-     public function printTeam(){
-        return '    
+    public function printTeam1(){
+        echo ' 
         
-            <table align="center" style="width:80%">
+        <div class="row">
+            <table align="center" style="width:50%">
                 <thead>
                     <tr>
                     </tr>
                 </thead>
-            
+            </div>
                 <tbody>
-                
-                <tr>
-                <td align= "center"><a role="button" class="btn popovers" data-toggle="popover" title="" data-content="
-<p><b>Keeper - 24</b></p>
-<p><b>Født:</b> 23/03 1985</p>
-<p><b>Nasjonalitet:</b> Polen</p>
-<p><b>Fødested:</b> Legnica</p>
-<p><b>Høyde:</b> 194cm</p>
-<p><b>Vekt:</b> 88kg</p>" 
+                    ';
+        
+        for($i=0; $i < 6; $i++){
+           
+           
+                echo '<td align= "center"> <img src="http://fotballguiden.nu/media/pics/logos/brann.png"  width="100" vertical-align="middle" > </a> </td> 
+                <tr> </tr>
+                </tbody> ';
 
-        data-original-title="<h4><b>Piotr Leciejewski</b><h4>"><img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/39510.png" width="60px" horizontal-align="middle" > </td></a>
-                <td align= "center"><a role="button" class="btn popovers" data-toggle="popover" title="" data-content="
-<p><b>Keeper - 1</b></p>
-<p><b>Født:</b> 18/11 1995</p>
-<p><b>Nasjonalitet:</b> Norge</p>
-<p><b>Fødested:</b> Bergen</p>
-<p><b>Høyde:</b> 186cm</p>
-<p><b>Vekt:</b> 82kg</p>
-" 
-        data-original-title="<h4><b>Ådne Nissestad</b><h4>"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/233454.png" width="60px" horizontal-align="middle" > </td></a>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/155919.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/30485.png" width="60px" horizontal-align="middle" > </td>
-                </tr>
-                
-                <tr>
-                <td align= "center"> <a role="button" class="btn popovers" data-toggle="popover" title="" data-content="
-<p><b>Forsvarsspiller - 27</b></p>
-<p><b>Født:</b> 27/03 1990</p>
-<p><b>Nasjonalitet:</b> Sverige</p>
-<p><b>Fødested:</b> Malmö</p>
-<p><b>Høyde:</b> 177cm</p>
-<p><b>Vekt:</b> 72kg</p>" 
-        data-original-title="<h4><b>Erdin Demir</b><h4>"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/111434.png" width="60px" horizontal-align="middle" > </td></a>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/132626.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/7483.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/298059.png" width="60px" horizontal-align="middle" > </td>
-                </tr>
-                
-                <tr>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/6040.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/18259.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/84070.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/9701.png" width="60px" horizontal-align="middle" > </td>
-                </tr>
-                
-                <tr>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/232573.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/190736.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/192917.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/232067.png" width="60px" horizontal-align="middle" > </td>
-                </tr>
-                
-                <tr>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/20013.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/74249.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/232572.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/233480.png" width="60px" horizontal-align="middle" > </td>
-                </tr>
-                
-                <tr>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/296041.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/29327.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/291330.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/7492.png" width="60px" horizontal-align="middle" > </td>
-                </tr>
-                
-                <tr>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/30876.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/28919.png" width="60px" horizontal-align="middle" > </td>
-                <td align= "center"> <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/339663.png" width="60px" horizontal-align="middle" > </td>
-                </tr>
-                
-                
-               </tbody> </table> <br>
-                
-                 
-
-        ';
-                
+    }  
+    }  
+    
+     public function printTeam(){
+        echo ' <p>
+                    <img src="http://cache.images.globalsportsmedia.com/perform/norway/150x150/39510.png">
+                </p>';
      }
     
     public function printTrivia(){
-        return "<br>
+        return "
                 <p> <b> Top spillere: </b> </p>
                 <p> Rolf Birger Pedersen har scoret flest mål for brann med 132 mål i perioden 1957-68, 1972 </p>
                 <p>Alexander Olsen har spillt flest landskamper i brann med 37 kamper </p>
@@ -337,7 +273,7 @@ class Club{
                 <p>Intertoto cup : 1. runde 1999</p>";
     }
     
-
+    
     
     
     public function printAccordion(){
@@ -369,7 +305,7 @@ class Club{
     </div>
     <div id="collapseTwo" class="panel-collapse collapse" role="tabpanel" aria-labelledby="team">
       <div class="panel-body">
-        ' . $this->printTeam() . '
+        ' . "a" .  '
       </div>
     </div>
   </div>
@@ -403,6 +339,14 @@ class Club{
 
 ?>
 
-
-
+<a href="http://jquery.com/"></a>
+    <script src="jquery.js"></script>
+    <script>
+        
+    $('.scrollToBottom').click(function () {
+     $('html, body').animate({scrollTop:$(document).height()}, 'slow');
+    return false;
+    });
+        
+    </script>
 

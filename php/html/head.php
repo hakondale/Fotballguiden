@@ -48,7 +48,7 @@ include "php/entities/News.php";
                             }else{document.write('<a class="navbar-brand"> ');}
                         </script>
 
-                        <img alt="Brand" src= "/media/pics/logos/fglogo.png"><b> Fotballguiden </b></a>
+                        <img alt="Brand" src= "/media/pics/logos/fglogo.png"> Fotballguiden </a>
                         <button class = "navbar-toggle" data-toggle = "collapse" data-target = ".navHeaderCollapse">
                           <span class = "icon-bar"></span>
                           <span class = "icon-bar"></span>
@@ -69,15 +69,13 @@ include "php/entities/News.php";
                         <?php echo '<li><a href = "lag.php"><span class="glyphicon glyphicon-th-large"></span> Lag</a></li>'; ?>
                         </ul>
                         <?php echo ' 
-                        '; ?>
                         <ul class="nav navbar-nav navbar-right " >
                         
                         <li> <div id="share-buttons">  <a href="http://www.facebook.com/sharer.php?u=http://www.fotballguiden.nu" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/facebook.png" alt="Facebook" />  </a>
   </div> </li>
   <li> <div id="share-buttons"> <a href="http://twitter.com/share?url=fotballguiden.nu&text=FOTBALLGUIDEN.nu YO &hashtags=fotballguiden" target="_blank"><img src="http://www.simplesharebuttons.com/images/somacro/twitter.png" alt="Twitter" /></a> </li>
-                        <li><a href = "hjelp.php"><span class="glyphicon glyphicon-info-sign"></span> Hjelp</a></li>
-                            <li> <div id="fargeblind"></div><a class="btn btn-danger btn-xs btn-block" onclick="document.body.style.cssText+=';background-image: url();background-repeat: ';" ><span class="glyphicon glyphicon-eye-close" font size="100"></span></span></a></div> </li>
-                    </div>
+                        <li><a href = "hjelp.php"><span class="glyphicon glyphicon-info-sign"></span> Hjelp</a> </div> </li>
+                        '; ?>
 
 
                     </ul>

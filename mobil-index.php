@@ -1,6 +1,8 @@
 <?php
 include "php/html/head.php";
+
 echo "<br> <br> <br>";
+
 ?>
 
 <!DOCTYPE html>
@@ -17,20 +19,13 @@ echo "<br> <br> <br>";
 #rad1 {
     background-color: grey;
 }
-body {
-background-image: url(/media/pics/logos/splash.jpg);
-max-height:70%;
-}
-.navbar-default .navbar-brand {
-    color: #cf5fe3;
-}
     
 </style>   
 </head>
 <body>
 
     <div class="container">
-            <br><br>
+            <br><br><br><br><br><br><br>
             <div class="row">
              <div class="col-md-4"> </div>
                 <div class="col-md-4" role="main">
@@ -58,8 +53,6 @@ max-height:70%;
             </div>
         </div>
 <?php
-
-
 
 
 printLogOutToast();
