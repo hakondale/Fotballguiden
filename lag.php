@@ -19,6 +19,18 @@ echo "<br> <br> <br>";
 #rad1 {
     background-color: grey;
 }
+.label {
+    padding: 1px 3px 2px;
+    font-size: 9.75px;
+    font-weight: bold;
+    color: #fff;
+    text-transform: uppercase;
+    white-space: nowrap;
+    background-color: rgba(26, 26, 26, 0.72);
+    -webkit-border-radius: 3px;
+    -moz-border-radius: 3px;
+    border-radius: 3px;
+}
 </style>   
 </head>
 <body>
@@ -52,10 +64,9 @@ echo "<br> <br> <br>";
     </script>
     
 <?php
-echo ' <div class="container">';
+
 $tippeligaen = new League(1);
 $tippeligaen->printAllClubLogos();
-echo ' </div>';
  
 
 printLogOutToast();

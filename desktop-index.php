@@ -24,6 +24,7 @@ echo "<br> <br> <br>";
 </head>
 <body>
 <br>
+    
     <script type="text/javascript"> 
     $('.nav a:contains("Nyheter")').parent().addClass('active');
     </script>
@@ -43,6 +44,10 @@ echo "<br> <br> <br>";
             else if (e.keyCode == '37') {
                 // left arrow
                 document.location ="/lag.php";
+            }
+            else if (e.keyCode == '77'){
+                // m
+                document.location = "/mobil-index.php";
             }
         }
     </script>
